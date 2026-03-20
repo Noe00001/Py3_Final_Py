@@ -1,0 +1,1 @@
+#  Analiza el siguiente “código existente” y realiza un -> refactor <-, tener en cuenta los problemas que se plantean al final.
