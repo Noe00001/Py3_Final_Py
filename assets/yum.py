@@ -23,4 +23,4 @@ try:
     resultado = calcular_promedio(entrada)
     print(f"\nPromedio: {resultado:.2f}")
 except ValueError as e:
-    print(f"\nError: {e}")
+    print(f"\nNo quiero: {e}")
