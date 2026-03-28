@@ -1,19 +1,19 @@
-from service import create_record, list_records
+from service import create_user, list_users
 
-print("=" * 45)
-print("  MODULO 1 - Estructura y validaciones base")
-print("=" * 45)
+while True:
+    print("Menú de Gestión de Usuarios")
+    print("1. Crear usuario")
+    print("2. Listar usuarios")
+    print("3. Salir")
 
-create_record(1, "Ana Garcia",  "ana@mail.com")
-create_record(2, "Luis Torres", "luis@mail.com")
-create_record(3, "Maria Ruiz",  "maria@mail.com")
+    option = input("Seleccione una opción: ")
 
-print("\n--- Intentos invalidos ---")
-
-create_record(1, "Otro nombre", "otro@mail.com")
-create_record(4, "Carlos",      "ana@mail.com")
-create_record(5, "   ",         "vacio@mail.com")
-create_record(-1, "Juan",       "juan@mail.com")
-
-print("\n--- Lista final ---")
-list_records()
+    if option == "1":
+        create_user()
+    elif option == "2":
+        list_users()
+    elif option == "3":
+        print("Saliendo del programa...")
+        break
+    else:
+        print("Opción inválida. Por favor, seleccione una opción del menú.")
