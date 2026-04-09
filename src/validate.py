@@ -39,7 +39,7 @@ def validate_user():
         print(f"Id de usuario asignado: {id_counter}")
         
         # Validate name
-        username = "Oliver"
+        username = str(input("Ingrese el nombre de usuario: "))
         
         # Validate email
         email = validate_email()
