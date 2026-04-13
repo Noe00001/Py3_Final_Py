@@ -38,6 +38,9 @@ gestion-info/
 │   ├── validate.py          
 │   └── integration.py       
 │
+├── tests/
+│   └── test.py              
+│
 ├── .gitignore
 ├── requirements.txt
 └── README.md
@@ -61,7 +64,7 @@ gestion-info/
 ### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/gestion-info.git
+git clone https://github.com/Noe00001/Py3_Final_Py
 cd gestion-info
 ```
 
@@ -89,6 +92,79 @@ pip install -r requirements.txt
 ```bash
 python src/main.py
 ```
+
+---
+
+## 🧪 Pruebas
+
+El proyecto incluye una suite de pruebas unitarias en `tests/test.py` que cubre la creación, listado y eliminación de usuarios. Los tests usan mocking para simular entradas del usuario sin requerir interacción real con la consola.
+
+### Pruebas cubiertas
+
+| # | Función testeada | Descripción |
+|---|---|---|
+| 1 | `validate_user()` | Crea un usuario con inputs simulados y verifica todos sus campos |
+| 2 | `list_records()` | Lista registros existentes y verifica que `print` sea invocado |
+| 3 | `delete_record()` | Elimina un usuario por ID y verifica que la lista quede vacía |
+
+### Ejecutar con `unittest` (sin dependencias extra)
+
+Desde la raíz del proyecto:
+
+```bash
+python -m unittest tests/test.py -v
+```
+
+La flag `-v` activa el modo verbose para ver el nombre y resultado de cada test individualmente:
+
+```
+test_1_crear_usuario (tests.test.TestGestionInfo) ... ok
+test_2_listar_usuarios (tests.test.TestGestionInfo) ... ok
+test_3_eliminar_usuario (tests.test.TestGestionInfo) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.012s
+
+OK
+```
+
+### Ejecutar con `pytest` (recomendado)
+
+Instala pytest si no lo tienes:
+
+```bash
+pip install pytest
+```
+
+Luego, desde la raíz del proyecto:
+
+```bash
+# Ejecutar todos los tests
+pytest tests/
+
+# Con salida detallada
+pytest tests/ -v
+
+# Con resumen de cobertura por módulo
+pytest tests/ -v --tb=short
+```
+
+Salida esperada con `-v`:
+
+```
+tests/test.py::TestGestionInfo::test_1_crear_usuario PASSED
+tests/test.py::TestGestionInfo::test_2_listar_usuarios PASSED
+tests/test.py::TestGestionInfo::test_3_eliminar_usuario PASSED
+
+3 passed in 0.08s
+```
+
+### Criterios de aceptación de las pruebas
+
+- ✅ Los 3 tests pasan sin errores.
+- ✅ No hay lógica de negocio dentro del menú (`menu.py` solo llama a `service.py`).
+- ✅ Las validaciones están centralizadas en `validate.py`, sin duplicación.
+- ✅ Cada test resetea el estado global en `setUp()` para ser independiente.
 
 ---
 
@@ -157,7 +233,7 @@ Este proyecto está bajo la licencia **MIT**.
 Puedes usar, copiar, modificar y distribuir el código libremente, siempre que incluyas el aviso de copyright original. No se ofrece ninguna garantía sobre el software.
 
 ```
-MIT License © 2024 Noe00001
+MIT License © 2026 Noe00001
 ```
 
 ---
